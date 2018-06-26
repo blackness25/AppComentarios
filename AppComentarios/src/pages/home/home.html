@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sugerencias APP Asperger
+      
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content #content padding id="content">
+    <ion-card *ngFor="let sugerencia of sugerencias">
+        <ion-card-header>
+          Nombre:  {{sugerencia.nombre}}
+          </ion-card-header>
+      <ion-card-content>
+       Titulo : {{sugerencia.titulo}} 
+      </ion-card-content>
+      <ion-card-content>
+        Comentario : {{sugerencia.comentario}}
+      </ion-card-content>
+      
+  </ion-card>
+ <div id="finCont"></div>
+</ion-content>
+<ion-footer>
+ 
+</ion-footer>
