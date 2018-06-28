@@ -11,6 +11,7 @@ export class HomePage {
   titulo: string = "";
   sugerencia: string = "";
   sugerencias = [];
+  
   constructor(public navCtrl: NavController) {
     this.getSugerencias();
   }
@@ -25,7 +26,10 @@ export class HomePage {
       this.scrollToBottom();
     });
   }
+  removerSugerencia(){
+    
 
+  }
   scrollToBottom() {
     var finCont = document.getElementById("finCont").offsetTop;
     this.content.scrollTo(0, finCont, 300);
