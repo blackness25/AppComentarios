@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Sugerencias APP Asperger
+
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content #content padding id="content" style="background-image: url('assets/imgs/fondo.jpg');">
+  <ion-card *ngFor="let sugerencia of sugerencias">
+    <ion-card-header>
+      Nombre: {{sugerencia.nombre}}
+    </ion-card-header>
+    <ion-card-content>
+      Titulo : {{sugerencia.titulo}}
+    </ion-card-content>
+    <ion-card-content>
+      Comentario : {{sugerencia.comentario}}
+    </ion-card-content>
+    <div style="background-color: lightgoldenrodyellow">
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small color="danger">
+            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+            <div>Eliminar</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-start clear small color="dark">
+            <ion-icon ios="ios-create" md="md-create"></ion-icon>
+            <div>Modificar</div>
+          </button>
+        </ion-col>
+
+      </ion-row>
+    </div>
+  </ion-card>
+  <div id="finCont"></div>
+</ion-content>
+<ion-footer>
+
+</ion-footer>
