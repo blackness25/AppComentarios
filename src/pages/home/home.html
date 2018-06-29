@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Sugerencias APP Asperger
+      Formulario de Sugerencias
 
     </ion-title>
   </ion-navbar>
@@ -10,10 +10,10 @@
 <ion-content #content padding id="content" style="background-image: url('assets/imgs/fondo.jpg');">
   <ion-card *ngFor="let sugerencia of sugerencias">
     <ion-card-header>
-      Nombre: {{sugerencia.nombre}}
+      Nombre Completo : {{sugerencia.nombre}}
     </ion-card-header>
     <ion-card-content>
-      Titulo : {{sugerencia.titulo}}
+      Tipo de Sugerencia : {{sugerencia.titulo}}
     </ion-card-content>
     <ion-card-content>
       Comentario : {{sugerencia.comentario}}
