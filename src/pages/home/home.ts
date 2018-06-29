@@ -1,39 +1,41 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController,IonicPage, NavParams,AlertController } from 'ionic-angular';
 import * as firebase from 'firebase';
+import { ComentariosPage } from '../comentarios/comentarios';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  @ViewChild("content") content: any
-  nomUser: string = "";
-  titulo: string = "";
-  sugerencia: string = ""; 
-  sugerencias = [];
+  user: any;
+  pass: any;
+  alertCtrl: AlertController;
 
-  constructor(public navCtrl: NavController) {
-    this.getSugerencias();
-  }
-  getSugerencias() {
-    var sugerenciasRef = firebase.database().ref().child("sugerencia");
-    sugerenciasRef.on("value", (snap) => {
-      var data = snap.val();
-      this.sugerencias = [];
-      for (var key in data) {
-        this.sugerencias.push(data[key]);
-      }
-      this.scrollToBottom();
-    });
-  }
-  removerSugerencia() {
-
+  constructor(public navCtrl: NavController ) {
 
   }
-  scrollToBottom() {
-    var finCont = document.getElementById("finCont").offsetTop;
-    this.content.scrollTo(0, finCont, 300);
+
+  iniciarPage() {
+    var usuariosRef = firebase.database().ref().child("usuarios");
+    if (usuariosRef.child("users").child("user").equalTo(this.user) || usuariosRef.child("users").child("pass").equalTo(this.pass) ) {
+      this.navCtrl.push(ComentariosPage);
+    } else {
+      const alert = this.alertCtrl.create({
+        title: 'ERROR!',
+        subTitle: 'Error de autenticacion',
+        buttons: ['OK']
+      });
+      alert.present();
+    }
+    //usuariosRef.
+
   }
-  //eliminar 
+
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
+
 
 }
