@@ -10,7 +10,7 @@
 <ion-content #content padding id="content" style="background-image: url('assets/imgs/fondo.jpg');">
   <ion-card *ngFor="let sugerencia of sugerencias">
     <ion-card-header>
-      Nombre Completo : {{sugerencia.nombre}}
+      Nombre : {{sugerencia.nombre}}
     </ion-card-header>
     <ion-card-content>
       Tipo de Sugerencia : {{sugerencia.titulo}}
@@ -27,7 +27,7 @@
           </button>
         </ion-col>
         <ion-col>
-          <button ion-button icon-start clear small color="dark">
+          <button ion-button icon-start clear small color="positive">
             <ion-icon ios="ios-create" md="md-create"></ion-icon>
             <div>Modificar</div>
           </button>
