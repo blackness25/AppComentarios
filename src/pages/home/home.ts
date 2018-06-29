@@ -9,9 +9,9 @@ export class HomePage {
   @ViewChild("content") content: any
   nomUser: string = "";
   titulo: string = "";
-  sugerencia: string = "";
+  sugerencia: string = ""; xds
   sugerencias = [];
-  
+
   constructor(public navCtrl: NavController) {
     this.getSugerencias();
   }
@@ -26,8 +26,8 @@ export class HomePage {
       this.scrollToBottom();
     });
   }
-  removerSugerencia(){
-    
+  removerSugerencia() {
+
 
   }
   scrollToBottom() {
