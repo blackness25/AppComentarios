@@ -9,7 +9,7 @@ export class HomePage {
   @ViewChild("content") content: any
   nomUser: string = "";
   titulo: string = "";
-  sugerencia: string = ""; xds
+  sugerencia: string = ""; 
   sugerencias = [];
 
   constructor(public navCtrl: NavController) {
