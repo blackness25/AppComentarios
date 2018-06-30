@@ -4,18 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import * as firebase from'firebase';
-var config = {
-  apiKey: "AIzaSyCUgtslUd0UdlzWY6NWkIW-X_-C_pTdc44",
-  authDomain: "appasperger.firebaseapp.com",
-  databaseURL: "https://appasperger.firebaseio.com",
-  projectId: "appasperger",
-  storageBucket: "appasperger.appspot.com",
-  messagingSenderId: "478828909687"
-
-};
-
-
 @Component({
   templateUrl: 'app.html'
 })
@@ -29,7 +17,6 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
-    firebase.initializeApp(config);
   }
 }
 

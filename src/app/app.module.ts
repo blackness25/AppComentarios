@@ -4,30 +4,51 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { AuthService } from '../providers/auth-service';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ComentariosPage } from '../pages/comentarios/comentarios';
+import { SignupPage } from '../pages/signup/signup';
+import {ComentariosPage} from '../pages/comentarios/comentarios';
+
+
+export const firebaseConfig = {
+  apiKey: "AIzaSyCUgtslUd0UdlzWY6NWkIW-X_-C_pTdc44",
+  authDomain: "appasperger.firebaseapp.com",
+  databaseURL: "https://appasperger.firebaseio.com",
+  projectId: "appasperger",
+  storageBucket: "appasperger.appspot.com",
+  messagingSenderId: "478828909687"
+};
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
+    SignupPage,
     ComentariosPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
+    SignupPage,
     ComentariosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService
   ]
 })
 export class AppModule {}

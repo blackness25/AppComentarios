@@ -1,7 +1,10 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage,  NavParams } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
+import { AuthService } from '../../providers/auth-service';
+
 import * as firebase from 'firebase';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the ComentariosPage page.
  *
@@ -21,7 +24,7 @@ export class ComentariosPage {
   sugerencia: string = ""; 
   sugerencias = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor( public authService: AuthService, public navCtrl: NavController, public navParams: NavParams) {
     this.getSugerencias();
   }
 
@@ -48,5 +51,8 @@ export class ComentariosPage {
     this.content.scrollTo(0, finCont, 300);
   }
   //eliminar 
-
+  signOut() {
+    this.authService.signOut();
+    this.navCtrl.setRoot(HomePage);
+  }
 }

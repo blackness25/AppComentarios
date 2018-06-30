@@ -1,47 +1,54 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Formulario de <br> Sugerencias
-    </ion-title>
-  </ion-navbar>
-</ion-header>
-
-<ion-content #content padding id="content" style="background-image: url('assets/imgs/fondo.jpg');">
-  <ion-card *ngFor="let sugerencia of sugerencias">
-    <ion-card-header>
-      Nombre : {{sugerencia.nombre}}
-    </ion-card-header>
-    <ion-card-content>
-      Tipo de Sugerencia : {{sugerencia.titulo}}
-    </ion-card-content>
-    <ion-card-content>
-        <ion-item>
-            <ion-label stacked>Comentario :</ion-label>
-            <ion-textarea value="{{sugerencia.comentario}}" disabled></ion-textarea>
-          </ion-item>
-        
-       
-    </ion-card-content>
-    <div style="background-color: burlywood">
-      <ion-row>
-        <ion-col>
-          <button ion-button icon-start clear small color="danger" (click)="removerSugerencia()">
-            <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
-            <div>Eliminar datos</div>
-          </button>
-        </ion-col>              
-        <ion-col>
-          <button ion-button icon-start clear small color="dark">
-            <ion-icon ios="ios-create" md="md-create"></ion-icon>
-            <div>Modificar</div>
-          </button>
-        </ion-col>
+    <ion-navbar>
+      <ion-title>
+        Formulario de sugerencias
+      </ion-title>
+      
+    <ion-buttons end>
+        <button ion-button icon-only (click)="signOut()">
+          <ion-icon name="log-out"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content #content padding id="content" style="background-image: url('assets/imgs/fondo.jpg');">
+  
+    <ion-card *ngFor="let sugerencia of sugerencias">
+      <ion-card-header>
+        Nombre : {{sugerencia.nombre}}
+      </ion-card-header>
+      <ion-card-content>
+        Tipo de Sugerencia : {{sugerencia.titulo}}
+      </ion-card-content>
+      <ion-card-content>
+          <ion-item>
+              <ion-label stacked>Comentario :</ion-label>
+              <ion-textarea value="{{sugerencia.comentario}}" disabled></ion-textarea>
+            </ion-item>
           
-      </ion-row>
-    </div>
-  </ion-card>
-  <div id="finCont"></div>
-</ion-content>
-<ion-footer>
-
-</ion-footer>
+         
+      </ion-card-content>
+      <div style="background-color: burlywood">
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small color="danger" (click)="removerSugerencia()">
+              <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+              <div>Eliminar datos</div>
+            </button>
+          </ion-col>              
+          <ion-col>
+            <button ion-button icon-start clear small color="dark">
+              <ion-icon ios="ios-create" md="md-create"></ion-icon>
+              <div>Modificar</div>
+            </button>
+          </ion-col>
+            
+        </ion-row>
+      </div>
+    </ion-card>
+    <div id="finCont"></div>
+  </ion-content>
+  <ion-footer>
+  
+  </ion-footer>
