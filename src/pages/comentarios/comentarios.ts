@@ -2,6 +2,10 @@ import { Component,ViewChild } from '@angular/core';
 import { IonicPage,  NavParams } from 'ionic-angular';
 import { NavController } from 'ionic-angular';
 import { AuthService } from '../../providers/auth-service';
+import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {Observable} from 'rxjs/Observable';
+
+
 
 import * as firebase from 'firebase';
 import { HomePage } from '../home/home';
@@ -13,6 +17,8 @@ import { HomePage } from '../home/home';
  */
 
 @IonicPage()
+
+
 @Component({
   selector: 'page-comentarios',
   templateUrl: 'comentarios.html',
