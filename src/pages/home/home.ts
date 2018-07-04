@@ -6,7 +6,7 @@ import { AuthService } from '../../providers/auth-service';
 import { UserModel } from '../../models/user-models';
 
 import { SignupPage } from '../signup/signup';
-import {ComentariosPage} from '../comentarios/comentarios';
+import {ListaProductosPage} from '../lista-productos/lista-productos';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -31,7 +31,7 @@ export class HomePage {
   this.authService.signInWithEmailAndPassword(this.userModel).then(result => {
       loading.dismiss();
 
-      this.navCtrl.setRoot(ComentariosPage);
+      this.navCtrl.setRoot(ListaProductosPage);
   }).catch(error => {
       loading.dismiss();
 

@@ -5,23 +5,27 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AuthService } from '../providers/auth-service';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
 import { SignupPage } from '../pages/signup/signup';
-import {ComentariosPage} from '../pages/comentarios/comentarios';
+import {ListaProductosPage} from '../pages/lista-productos/lista-productos';
+import { ProductoProvider } from '../providers/producto/producto';
 
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyCUgtslUd0UdlzWY6NWkIW-X_-C_pTdc44",
-  authDomain: "appasperger.firebaseapp.com",
-  databaseURL: "https://appasperger.firebaseio.com",
-  projectId: "appasperger",
-  storageBucket: "appasperger.appspot.com",
-  messagingSenderId: "478828909687"
+  apiKey: "AIzaSyC6v7D9sQ8Qvu7KwSawn9MAQdlsojm0bec",
+    authDomain: "crudtest-383da.firebaseapp.com",
+    databaseURL: "https://crudtest-383da.firebaseio.com",
+    projectId: "crudtest-383da",
+    storageBucket: "crudtest-383da.appspot.com",
+    messagingSenderId: "716666609615"
+
+
 };
 
 @NgModule({
@@ -29,27 +33,28 @@ export const firebaseConfig = {
     MyApp,
     HomePage,
     SignupPage,
-    ComentariosPage
+    ListaProductosPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     SignupPage,
-    ComentariosPage
+    ListaProductosPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    ProductoProvider,
     AuthService
   ]
 })
-export class AppModule {}
+export class AppModule { }
