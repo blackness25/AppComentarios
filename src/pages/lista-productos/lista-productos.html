@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Contactos
+      Lista de Productos
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="signOut()">
@@ -21,7 +21,7 @@
       <p>$ {{ producto.precio }}</p>
     </ion-item>
 
-    <ion-item-options side="right">
+    <ion-item-options side="left">
       <button ion-button color="secondary" (click)="editProducto(producto)">
         <ion-icon name="create"></ion-icon>
       </button>
@@ -34,7 +34,7 @@
 </ion-list>
  
   <ion-fab bottom right>
-    <button ion-fab color="primary" (click)="newProducto()">
+    <button ion-fab color="dark" (click)="newProducto()">
       <ion-icon name="add"></ion-icon>
     </button>
   </ion-fab>
